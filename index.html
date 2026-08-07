@@ -1,87 +1,333 @@
-<div align="center">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Torin Chacko — Backend Developer &amp; Systems Engineer</title>
+<meta name="description" content="Torin Chacko — backend developer and systems engineer. C/C++, Python, x86-64, and systems-level projects.">
+<meta name="theme-color" content="#0a0e0c">
 
-<img src="https://github.com/TorinChacko/TorinChacko/blob/main/Github%20Banner.png" alt="Torin Chacko banner" width="100%"/>
+<meta property="og:title" content="Torin Chacko — Backend Developer & Systems Engineer">
+<meta property="og:description" content="Systems programming, performance, and low-level architecture. x86-64 emulator, compartmental metabolic models, and more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://torinchacko.github.io">
 
-# Torin Chacko
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%2300ff9d%22>&gt;_</text></svg>">
 
-**Backend Developer & Systems Engineer** — United States
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=flat-square&logo=vercel&logoColor=white)](https://torinchacko.github.io)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/torin-chacko)
-[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=flat-square&logo=leetcode&logoColor=black)](https://leetcode.com/ty4jzbcja7)
-![Profile views](https://komarev.com/ghpvc/?username=torinchacko&label=Profile%20views&color=0e75b6&style=flat-square)
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
 
-</div>
+<!-- Background layers -->
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="bg-scanline" aria-hidden="true"></div>
+<canvas id="particles" aria-hidden="true"></canvas>
 
----
+<a class="skip-link" href="#main">Skip to content</a>
 
-### About Me
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand"><span class="prompt">$</span> torin<span class="cursor-blink">_</span></a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#about" data-nav="about">about</a></li>
+        <li><a href="#skills" data-nav="skills">skills</a></li>
+        <li><a href="#projects" data-nav="projects">projects</a></li>
+        <li><a href="#resume" data-nav="resume">resume</a></li>
+        <li><a href="#contact" data-nav="contact">contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-- 🔧 Backend developer with a focus on **systems programming, performance, and low-level architecture**
-- 🧠 Comfortable working close to the metal — memory management, concurrency, and the tradeoffs that come with them
-- 📌 Featured projects are pinned above — that's the best snapshot of what I've been building
-- 🧩 Active LeetCode grinder, chasing consistency over streaks
-- 💬 *What do you call a programmer who vomits at IHOP? A stack overflow.*
+<main id="main">
 
----
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <p class="hero-eyebrow reveal"><span class="dot"></span> available for opportunities</p>
 
-### Languages & Tools
+      <h1 class="hero-title reveal">
+        <span class="line">Hi, I'm <span class="accent">Torin Chacko</span></span>
+      </h1>
 
-<p align="left">
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="C" width="42" height="42"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++" width="42" height="42"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="42" height="42"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="Pandas" width="42" height="42"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" width="42" height="42"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" width="42" height="42"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="Linux" width="42" height="42"/>
-</p>
+      <div class="hero-typed reveal">
+        <span class="prompt">$</span>
+        <span id="typed" class="typed-text"></span><span class="cursor-blink">_</span>
+      </div>
 
-<p align="left">
-  <img src="https://img.shields.io/badge/x86--64_Assembly-6E4C13?style=for-the-badge&logo=cachet&logoColor=white" alt="x86-64 Assembly"/>
-</p>
+      <p class="hero-sub reveal">
+        Backend developer and systems engineer. Comfortable working close to the
+        metal — memory management, concurrency, and the tradeoffs that come with them.
+      </p>
 
----
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="resume/resume.pdf" target="_blank" rel="noopener">
+          <span>View Résumé</span>
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/TorinChacko" target="_blank" rel="noopener">
+          <span>GitHub</span>
+        </a>
+        <a class="btn btn-ghost" href="#projects">
+          <span>See Projects</span>
+        </a>
+      </div>
 
-### GitHub Stats
+      <div class="hero-terminal reveal" aria-hidden="true">
+        <div class="term-bar">
+          <span class="term-dot red"></span><span class="term-dot yellow"></span><span class="term-dot green"></span>
+          <span class="term-title">whoami.sh</span>
+        </div>
+        <pre class="term-body"><code><span class="c-comment">// running whoami --verbose</span>
+<span class="c-key">const</span> engineer = {
+  name: <span class="c-str">"Torin Chacko"</span>,
+  focus: [<span class="c-str">"systems"</span>, <span class="c-str">"performance"</span>, <span class="c-str">"low-level architecture"</span>],
+  languages: [<span class="c-str">"C"</span>, <span class="c-str">"C++"</span>, <span class="c-str">"Python"</span>, <span class="c-str">"x86-64 asm"</span>],
+  status: <span class="c-str">"shipping"</span>,
+};
+<span class="c-comment">// stack overflow? that's my cue.</span></code></pre>
+      </div>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="Scroll to content">
+      <span></span>
+    </a>
+  </section>
 
-<p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=torinchacko&show_icons=true&theme=default&hide_border=true&count_private=true" alt="GitHub stats" height="165"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=torinchacko&hide_border=true" alt="GitHub streak" height="165"/>
-</p>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <h2 class="section-title reveal"><span class="tag">01</span> About</h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm a backend developer and systems engineer focused on performance
+            and low-level architecture — the kind of work where memory layout,
+            concurrency, and instruction-level behavior actually matter.
+          </p>
+          <p>
+            Outside of coursework and side projects, I'm an active LeetCode
+            grinder chasing consistency over streaks, and I build things I'd
+            actually want to read the source code of.
+          </p>
+          <blockquote class="joke">
+            "What do you call a programmer who vomits at IHOP? A stack overflow."
+          </blockquote>
+        </div>
+        <div class="about-facts reveal">
+          <ul class="fact-list">
+            <li><span class="fact-k">Focus</span><span class="fact-v">Systems programming &amp; performance</span></li>
+            <li><span class="fact-k">Comfortable with</span><span class="fact-v">Memory management, concurrency, ELF/ABI internals</span></li>
+            <li><span class="fact-k">Currently building</span><span class="fact-v">A from-scratch x86-64 emulator &amp; debugger</span></li>
+            <li><span class="fact-k">Grinding</span><span class="fact-v">LeetCode — consistency over streaks</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<details>
-<summary>Most used languages</summary>
-<br/>
-<p align="left">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=torinchacko&layout=compact&hide_border=true&theme=default" alt="Top languages"/>
-</p>
-</details>
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="section-inner">
+      <h2 class="section-title reveal"><span class="tag">02</span> Skills &amp; Tools</h2>
+      <div class="skills-grid" id="skillsGrid">
+        <div class="skill-chip reveal"><span class="skill-name">C</span></div>
+        <div class="skill-chip reveal"><span class="skill-name">C++</span></div>
+        <div class="skill-chip reveal"><span class="skill-name">Python</span></div>
+        <div class="skill-chip reveal"><span class="skill-name">x86-64 Assembly</span></div>
+        <div class="skill-chip reveal"><span class="skill-name">MySQL</span></div>
+        <div class="skill-chip reveal"><span class="skill-name">Git</span></div>
+        <div class="skill-chip reveal"><span class="skill-name">Linux</span></div>
+        <div class="skill-chip reveal"><span class="skill-name">Pandas</span></div>
+        <div class="skill-chip reveal"><span class="skill-name">CMake</span></div>
+        <div class="skill-chip reveal"><span class="skill-name">GitHub Actions</span></div>
+        <div class="skill-chip reveal"><span class="skill-name">Three.js</span></div>
+        <div class="skill-chip reveal"><span class="skill-name">ShaderLab</span></div>
+      </div>
+    </div>
+  </section>
 
----
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <h2 class="section-title reveal"><span class="tag">03</span> Projects</h2>
 
-### Contribution Snake
+      <div class="projects-grid">
 
-<sub>Updates automatically every 12 hours via GitHub Actions. If it looks wrong, try disabling "dynamic theme" in your GitHub display settings.</sub>
+        <article class="project-card reveal" data-tilt>
+          <div class="project-card-glow" aria-hidden="true"></div>
+          <div class="project-head">
+            <h3>x86-64 Emulator</h3>
+            <span class="project-status">in progress</span>
+          </div>
+          <p class="project-desc">
+            A from-scratch x86-64 emulator and debugger in modern C++.
+            Instruction semantics, machine-code decoding, ELF loading, virtual
+            memory, syscalls, SIMD — building toward a JIT backend. Currently on
+            Milestone 1: CPU state and integer flags, with full flag-correctness
+            unit tests.
+          </p>
+          <div class="project-tags">
+            <span>C++20</span><span>CMake</span><span>Systems</span><span>x86-64</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/TorinChacko/x86-64-emulator" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </article>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/TorinChacko/TorinChacko/blob/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/TorinChacko/TorinChacko/blob/output/github-snake.svg" />
-  <img alt="GitHub contribution snake" src="https://github.com/TorinChacko/TorinChacko/blob/output/github-snake.svg" />
-</picture>
+        <article class="project-card reveal" data-tilt>
+          <div class="project-card-glow" aria-hidden="true"></div>
+          <div class="project-head">
+            <h3>Compartmental Metabolic Model</h3>
+            <span class="project-status">educational</span>
+          </div>
+          <p class="project-desc">
+            Hour-by-hour, multi-organ simulation of human metabolism across ten
+            interacting subsystems (liver, kidney, pancreas, muscle, adipose,
+            blood, brain, heart, and more). Responds to diet and exercise
+            input, with strict double-entry mass and energy conservation
+            audited at every step.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>Simulation</span><span>Numerical Methods</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/TorinChacko/MetabolicModel" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </article>
 
----
+        <article class="project-card reveal" data-tilt>
+          <div class="project-card-glow" aria-hidden="true"></div>
+          <div class="project-head">
+            <h3>Garmin Field Log</h3>
+            <span class="project-status">live</span>
+          </div>
+          <p class="project-desc">
+            A serverless fitness dashboard: GitHub Actions pulls Garmin Connect
+            stats on a daily schedule and commits the data, GitHub Pages serves
+            the static frontend that reads it. No server, no always-on machine
+            — just scheduled CI and a static page.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>GitHub Actions</span><span>Static Hosting</span>
+          </div>
+          <div class="project-links">
+            <a href="https://torinchacko.github.io/garmin-dashboard/" target="_blank" rel="noopener">Live Demo →</a>
+            <a href="https://github.com/TorinChacko/garmin-dashboard" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </article>
 
-### Connect
+        <article class="project-card reveal" data-tilt>
+          <div class="project-card-glow" aria-hidden="true"></div>
+          <div class="project-head">
+            <h3>The Door</h3>
+            <span class="project-status">game jam</span>
+          </div>
+          <p class="project-desc">
+            A game built for ACM Studio @ UCLA's Reverse Game Jam (Winter 2025).
+            You've lost your keys — use a set of increasingly weird tools to get
+            back into your own house before time runs out.
+          </p>
+          <div class="project-tags">
+            <span>Unity</span><span>ShaderLab</span><span>Game Jam</span>
+          </div>
+          <div class="project-links">
+            <a href="https://torinchacko1.itch.io/ducksanddoors" target="_blank" rel="noopener">Play →</a>
+            <a href="https://github.com/TorinChacko/TheDoor" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </article>
 
-<p align="left">
-  <a href="https://linkedin.com/in/torin-chacko" target="_blank">
-    <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="LinkedIn" height="32" width="32" />
-  </a>
-  <a href="https://www.leetcode.com/ty4jzbcja7" target="_blank">
-    <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="LeetCode" height="32" width="32" />
-  </a>
-  <a href="https://torinchacko.github.io" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png" alt="Portfolio" height="32" width="32" />
-  </a>
-</p>
+        <article class="project-card reveal" data-tilt>
+          <div class="project-card-glow" aria-hidden="true"></div>
+          <div class="project-head">
+            <h3>Swarmfall</h3>
+            <span class="project-status private">private repo</span>
+          </div>
+          <p class="project-desc">
+            An insect battle-royale built with Three.js — no engine install, no
+            binary assets. 100 bugs drop, one bug flies; pick a species and
+            fight down to the last one as a wall of insecticide fog closes in.
+          </p>
+          <div class="project-tags">
+            <span>Three.js</span><span>WebGL</span><span>Procedural</span>
+          </div>
+          <div class="project-links">
+            <span class="project-link-disabled" title="Repository is private">Source (private)</span>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="projects-more reveal">
+        More on <a href="https://github.com/TorinChacko?tab=repositories" target="_blank" rel="noopener">GitHub →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section class="section" id="resume">
+    <div class="section-inner">
+      <h2 class="section-title reveal"><span class="tag">04</span> Résumé</h2>
+      <div class="resume-panel reveal">
+        <div class="resume-info">
+          <p>
+            My résumé is written in LaTeX and rebuilt automatically by GitHub
+            Actions on every update, so what's linked here always matches the
+            source.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="resume/resume.pdf" target="_blank" rel="noopener">Download PDF</a>
+            <a class="btn btn-ghost" href="resume/resume.tex" target="_blank" rel="noopener">View LaTeX Source</a>
+          </div>
+        </div>
+        <div class="resume-preview">
+          <object data="resume/resume.pdf" type="application/pdf" width="100%" height="100%" aria-label="Résumé preview">
+            <p class="resume-fallback">PDF preview unavailable — <a href="resume/resume.pdf">download the résumé</a> instead.</p>
+          </object>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-inner contact-inner">
+      <h2 class="section-title reveal"><span class="tag">05</span> Contact</h2>
+      <p class="contact-lead reveal">Have a role, project, or just want to talk systems? Reach out.</p>
+      <div class="contact-links reveal">
+        <a class="contact-link" href="mailto:chackotorin@gmail.com">
+          <span class="contact-icon" aria-hidden="true">✉</span>
+          <span>chackotorin@gmail.com</span>
+        </a>
+        <a class="contact-link" href="https://linkedin.com/in/torin-chacko" target="_blank" rel="noopener">
+          <span class="contact-icon" aria-hidden="true">in</span>
+          <span>LinkedIn</span>
+        </a>
+        <a class="contact-link" href="https://github.com/TorinChacko" target="_blank" rel="noopener">
+          <span class="contact-icon" aria-hidden="true">⌥</span>
+          <span>GitHub</span>
+        </a>
+        <a class="contact-link" href="https://leetcode.com/ty4jzbcja7" target="_blank" rel="noopener">
+          <span class="contact-icon" aria-hidden="true">λ</span>
+          <span>LeetCode</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Built with vanilla HTML/CSS/JS, hosted free on GitHub Pages. <span id="year"></span></p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

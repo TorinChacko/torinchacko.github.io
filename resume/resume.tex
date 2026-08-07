@@ -1,0 +1,107 @@
+\documentclass[10.5pt,letterpaper]{article}
+
+\usepackage[margin=0.65in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+\definecolor{accent}{HTML}{0B6E4F}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent,
+}
+
+\newcommand{\entry}[4]{%
+  \textbf{#1} \hfill #2 \\
+  \textit{#3} \hfill \textit{#4} \\
+}
+
+\begin{document}
+
+% ---------------------------------------------------------
+% Header
+% ---------------------------------------------------------
+\begin{center}
+  {\LARGE \bfseries Torin Chacko} \\[4pt]
+  Backend Developer \& Systems Engineer \\[2pt]
+  \href{mailto:chackotorin@gmail.com}{chackotorin@gmail.com} \; $|$ \;
+  \href{https://linkedin.com/in/torin-chacko}{linkedin.com/in/torin-chacko} \; $|$ \;
+  \href{https://github.com/TorinChacko}{github.com/TorinChacko} \; $|$ \;
+  \href{https://torinchacko.github.io}{torinchacko.github.io}
+\end{center}
+
+% ---------------------------------------------------------
+% Education  -- FILL IN
+% ---------------------------------------------------------
+\section*{Education}
+\entry{[Your University]}{[City, State]}{[Degree, Major]}{[Expected Graduation]}
+\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=2pt]
+  \item [Relevant coursework: e.g. Computer Architecture, Operating Systems, Data Structures \& Algorithms]
+  \item [GPA / honors / relevant coursework -- optional]
+\end{itemize}
+
+% ---------------------------------------------------------
+% Experience  -- FILL IN
+% ---------------------------------------------------------
+\section*{Experience}
+\entry{[Job Title]}{[Start] -- [End]}{[Company Name]}{[City, State]}
+\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=2pt]
+  \item [What you built or owned, with a concrete result or metric]
+  \item [A second bullet -- tools/technologies used and impact]
+\end{itemize}
+
+\vspace{4pt}
+\entry{[Job Title]}{[Start] -- [End]}{[Company Name]}{[City, State]}
+\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=2pt]
+  \item [Bullet -- action verb, what you did, measurable outcome]
+\end{itemize}
+
+% ---------------------------------------------------------
+% Projects
+% ---------------------------------------------------------
+\section*{Projects}
+
+\entry{x86-64 Emulator}{}{C++20, CMake}{}
+\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=2pt]
+  \item Building a from-scratch x86-64 emulator and debugger covering instruction
+    semantics, machine-code decoding, ELF loading, virtual memory, and syscalls
+  \item Implemented CPU state and flag-correctness (CF/PF/AF/ZF/SF/OF) verified
+    against native hardware with a dependency-free unit-test suite
+\end{itemize}
+
+\vspace{4pt}
+\entry{Compartmental Human Metabolic Model}{}{Python}{}
+\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=2pt]
+  \item Built an hour-by-hour, ten-subsystem simulation of human metabolism
+    responding to diet and exercise inputs
+  \item Enforced strict double-entry mass and energy conservation across every
+    organ compartment and environmental sink
+\end{itemize}
+
+\vspace{4pt}
+\entry{Garmin Field Log}{}{Python, GitHub Actions}{}
+\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=2pt]
+  \item Shipped a serverless fitness dashboard: a scheduled GitHub Actions job
+    pulls Garmin Connect data daily and a static GitHub Pages frontend renders it
+\end{itemize}
+
+% ---------------------------------------------------------
+% Skills
+% ---------------------------------------------------------
+\section*{Skills}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+  \textbf{Languages} & C, C++, Python, x86-64 Assembly, SQL \\
+  \textbf{Tools} & Git, CMake, Linux, MySQL, GitHub Actions, Pandas \\
+\end{tabularx}
+
+\end{document}
