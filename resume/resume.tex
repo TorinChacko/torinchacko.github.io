@@ -1,4 +1,3 @@
-
 \documentclass[10pt,letterpaper]{article}
 \usepackage[margin=0.5in,top=0.45in,bottom=0.45in]{geometry}
 \usepackage{enumitem}
@@ -53,20 +52,19 @@
 }
 
 % Same as \entry but reserves a small logo column on the left.
-% Usage: \entrylogo{path/to/logo.png}{Position}{Date}{Org}{Location}
 \newcommand{\entrylogo}[5]{%
-\begin{tabularx}{\linewidth}{@{}p{0.4in} X@{}}
-\raisebox{-0.05in}{\includegraphics[
-    width=0.35in,
-    height=0.35in,
-    keepaspectratio
-]{#1}}
-&
-\textbf{#2} \hfill #3 \\
-&
-\textit{#4} \hfill \textit{#5} \\
-\end{tabularx}
-\vspace{2pt}
+    \begin{tabularx}{\linewidth}{@{}p{0.4in} X@{}}
+        \raisebox{-0.05in}{\includegraphics[
+            width=0.35in,
+            height=0.35in,
+            keepaspectratio
+        ]{#1}}
+        &
+        \textbf{#2} \hfill #3 \\
+        &
+        \textit{#4} \hfill \textit{#5} \\
+    \end{tabularx}
+    \vspace{2pt}
 }
 
 \begin{document}
@@ -78,6 +76,7 @@
 \begin{center}
     {\LARGE \bfseries Torin Chacko} \\[5pt]
     Computational Mathematics \& Systems Engineering \\[4pt]
+
     \href{mailto:chackotorin@gmail.com}{chackotorin@gmail.com}
     \quad $|$ \quad
     \href{https://linkedin.com/in/torin-chacko}{linkedin.com/in/torin-chacko}
@@ -95,10 +94,10 @@
 \section*{Education}
 
 \entry
-    {University of California, Los Angeles}
-    {Expected 2028}
-    {B.S., Mathematics of Computation}
-    {Los Angeles, CA}
+{University of California, Los Angeles}
+{Expected 2028}
+{B.S., Mathematics of Computation}
+{Los Angeles, CA}
 
 \begin{itemize}
     \item Relevant coursework: CS33 Computer Architecture, Operating Systems, CS32 Data Structures \& Algorithms, Linear Algebra, Real Analysis, Complex Analysis, Statistical Models
@@ -113,24 +112,24 @@
 \section*{Experience}
 
 \entry
-    {Software Engineer}
-    {Jul 2026 -- Present}
-    {Numberzoo}
-    {Hybrid}
+{Software Engineer}
+{Jul 2026 -- Present}
+{Numberzoo}
+{Hybrid}
 
 \begin{itemize}
     \item Connected client data with custom-built chat applications for small-business clients
     \item Built AI-powered workflow automation and automated document creation pipelines
-    \item \textit {Technologies: SQL, PostgreSQL, C\#, .NET, Node.js, AI automation}
+    \item \textit{Technologies: SQL, PostgreSQL, C\#, .NET, Node.js, AI automation}
 \end{itemize}
 
 \vspace{4pt}
 
 \entry
-    {IST Systems Engineer Intern}
-    {Jun 2025 -- Aug 2025}
-    {County of Marin}
-    {San Rafael, CA}
+{IST Systems Engineer Intern}
+{Jun 2025 -- Aug 2025}
+{County of Marin}
+{San Rafael, CA}
 
 \begin{itemize}
     \item Updated out-of-date County systems in C\#
@@ -147,10 +146,10 @@
 \section*{Projects}
 
 \entry
-    {x86-64 Emulator}
-    {}
-    {C++20, CMake}
-    {}
+{x86-64 Emulator}
+{}
+{C++20, CMake}
+{}
 
 \begin{itemize}
     \item Building a from-scratch x86-64 emulator and debugger covering instruction semantics, machine-code decoding, ELF loading, virtual memory, and syscalls
@@ -160,10 +159,10 @@
 \vspace{4pt}
 
 \entry
-    {Compartmental Human Metabolic Model}
-    {}
-    {Python}
-    {}
+{Compartmental Human Metabolic Model}
+{}
+{Python}
+{}
 
 \begin{itemize}
     \item Built an hour-by-hour, ten-subsystem simulation of human metabolism responding to diet and exercise inputs
@@ -173,10 +172,10 @@
 \vspace{4pt}
 
 \entry
-    {Garmin Field Log}
-    {}
-    {Python, GitHub Actions, HTML}
-    {}
+{Garmin Field Log}
+{}
+{Python, GitHub Actions, HTML}
+{}
 
 \begin{itemize}
     \item Connected the Garmin API to a serverless fitness dashboard: a scheduled GitHub Actions job pulls Garmin Connect data daily and a static GitHub Pages frontend renders it
@@ -189,16 +188,14 @@
 \section*{Skills}
 
 \begin{tabularx}{\linewidth}{@{}lX@{}}
-\textbf{Languages} &
-C, C++, C#, Python, x86-64 Assembly, MIPS, SQL \\[4pt]
+    \textbf{Languages} &
+    C, C++, C\#, Python, x86-64 Assembly, MIPS, SQL \\[4pt]
 
-\textbf{Tools \& Frameworks} &
-.NET Framework, Node.js, Git, CMake, Linux, MySQL, PostgreSQL, GitHub Actions, SolidWorks, ROS \\[4pt]
+    \textbf{Tools \& Frameworks} &
+    .NET Framework, Node.js, Git, CMake, Linux, MySQL, PostgreSQL, GitHub Actions, SolidWorks, ROS \\[4pt]
 
-\textbf{Domains} &
-Low-Level Systems, Cybersecurity, Algorithms
-
+    \textbf{Domains} &
+    Low-Level Systems, Cybersecurity, Algorithms
 \end{tabularx}
 
 \end{document}
-```
