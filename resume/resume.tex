@@ -1,29 +1,40 @@
 \documentclass[10.5pt,letterpaper]{article}
-
 \usepackage[margin=0.65in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{tabularx}
-
+\usepackage{graphicx}
 \definecolor{accent}{HTML}{0B6E4F}
-
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-
 \titleformat{\section}{\large\bfseries\color{accent}}{}{0em}{}[\titlerule]
 \titlespacing*{\section}{0pt}{12pt}{6pt}
-
 \hypersetup{
   colorlinks=true,
   urlcolor=accent,
   linkcolor=accent,
 }
 
+% #1 = position/title   #2 = date range
+% #3 = organization      #4 = location
+% #5 (optional, via \entrylogo) = path to a logo image file
 \newcommand{\entry}[4]{%
   \textbf{#1} \hfill #2 \\
   \textit{#3} \hfill \textit{#4} \\
+}
+
+% Same as \entry but reserves a small logo column on the left.
+% Usage: \entrylogo{path/to/logo.png}{Position}{Date}{Org}{Location}
+% If the logo file doesn't exist, comment out the \includegraphics line
+% and this degrades gracefully to a blank box.
+\newcommand{\entrylogo}[5]{%
+  \begin{tabularx}{\linewidth}{@{}p{0.45in} X@{}}
+    \raisebox{-0.05in}{\includegraphics[width=0.4in,height=0.4in,keepaspectratio]{#1}} &
+    \textbf{#2} \hfill #3 \\
+    & \textit{#4} \hfill \textit{#5} \\
+  \end{tabularx}
 }
 
 \begin{document}
@@ -41,58 +52,62 @@
 \end{center}
 
 % ---------------------------------------------------------
-% Education  -- FILL IN
+% Education
 % ---------------------------------------------------------
 \section*{Education}
-\entry{[Your University]}{[City, State]}{[Degree, Major]}{[Expected Graduation]}
+\entry{University of California, Los Angeles}{Expected 2028}{B.S., Mathematics of Computation}{Los Angeles, CA}
 \begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=2pt]
-  \item [Relevant coursework: e.g. Computer Architecture, Operating Systems, Data Structures \& Algorithms]
-  \item [GPA / honors / relevant coursework -- optional]
+  \item Relevant coursework: CS33 Computer Architecture and Operating Systems in x86-64 ASM, CS32 Data Structures \& Algorithms, Linear Algebra, Real Analysis, Complex Analysis, Statistical Models
 \end{itemize}
 
 % ---------------------------------------------------------
-% Experience  -- FILL IN
+% Experience
 % ---------------------------------------------------------
 \section*{Experience}
-\entry{[Job Title]}{[Start] -- [End]}{[Company Name]}{[City, State]}
-\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=2pt]
-  \item [What you built or owned, with a concrete result or metric]
-  \item [A second bullet -- tools/technologies used and impact]
-\end{itemize}
 
+% --- If you have a logo file, swap the \entry line below for:
+% \entrylogo{logos/marin-county.png}{Software Engineering Intern}{06/2025 -- 08/2026}{County of Marin, Information Services \& Technology}{San Rafael, CA}
+\entry{Software Engineering Intern}{06/2025 -- 08/2026}{County of Marin, Information Services \& Technology (IST)}{San Rafael, CA}
+\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=1pt]
+  \item Updated out-of-date systems for the County in C\#.
+  \item Worked with the LAND division to update their platform and tools to allow for more user access and use.
+  \item \textit{[SQL Queries,.NET Framework, HTML, CSS]}
+\end{itemize}
 \vspace{4pt}
-\entry{[Job Title]}{[Start] -- [End]}{[Company Name]}{[City, State]}
-\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=2pt]
-  \item [Bullet -- action verb, what you did, measurable outcome]
+
+% \entrylogo{logos/numberzoo.png}{Software Engineer}{07/2026 -- Present}{Numberzoo}{City, State}
+\entry{Software Engineer}{07/2026 -- Present}{Numberzoo}{\textit{[Lucas Valley, CA]}}
+\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=1pt]
+  \item Connected client data with custom-built chat applications
+  \item Built AI-powered workflow automation and automated document creation for small businesses
+  \item \textit{[SQL, PostGres, C\#, .NET, Node, AI Automation]}
 \end{itemize}
 
 % ---------------------------------------------------------
 % Projects
 % ---------------------------------------------------------
 \section*{Projects}
-
 \entry{x86-64 Emulator}{}{C++20, CMake}{}
-\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=2pt]
+\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=1pt]
   \item Building a from-scratch x86-64 emulator and debugger covering instruction
     semantics, machine-code decoding, ELF loading, virtual memory, and syscalls
   \item Implemented CPU state and flag-correctness (CF/PF/AF/ZF/SF/OF) verified
     against native hardware with a dependency-free unit-test suite
 \end{itemize}
-
 \vspace{4pt}
 \entry{Compartmental Human Metabolic Model}{}{Python}{}
-\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=2pt]
+\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=1pt]
   \item Built an hour-by-hour, ten-subsystem simulation of human metabolism
     responding to diet and exercise inputs
   \item Enforced strict double-entry mass and energy conservation across every
     organ compartment and environmental sink
 \end{itemize}
-
 \vspace{4pt}
-\entry{Garmin Field Log}{}{Python, GitHub Actions}{}
-\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=2pt]
-  \item Shipped a serverless fitness dashboard: a scheduled GitHub Actions job
+\entry{Garmin Field Log}{}{Python, GitHub Actions, HTML}{}
+\begin{itemize}[leftmargin=18pt, itemsep=1pt, topsep=1pt]
+  \item Connected Garmin API with a serverless fitness dashboard: a scheduled GitHub Actions job
     pulls Garmin Connect data daily and a static GitHub Pages frontend renders it
+    \item Created a backfill feature to pull sequentially all historical data from Garmin and update the website with the new data.
 \end{itemize}
 
 % ---------------------------------------------------------
@@ -100,8 +115,8 @@
 % ---------------------------------------------------------
 \section*{Skills}
 \begin{tabularx}{\linewidth}{@{}lX@{}}
-  \textbf{Languages} & C, C++, Python, x86-64 Assembly, SQL \\
-  \textbf{Tools} & Git, CMake, Linux, MySQL, GitHub Actions, Pandas \\
+  \textbf{Languages} & C, C++, Python, x86-64 Assembly, SQL, Advanced Mathematics \\
+  \textbf{Tools} & .NET, Node, Git, CMake, Linux, MySQL, GitHub Actions, LaTex \\
 \end{tabularx}
 
 \end{document}
