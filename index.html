@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Torin Chacko — Backend Developer &amp; Systems Engineer</title>
 <meta name="description" content="Torin Chacko — backend developer and systems engineer. C/C++, Python, x86-64, and systems-level projects.">
-<meta name="theme-color" content="#0a0e0c">
+<meta name="theme-color" content="#07050c">
 
 <meta property="og:title" content="Torin Chacko — Backend Developer & Systems Engineer">
-<meta property="og:description" content="Systems programming, performance, and low-level architecture. x86-64 emulator, compartmental metabolic models, and more.">
+<meta property="og:description" content="Systems programming, performance, and low-level architecture. A from-scratch x86-64 emulator, serverless dashboards, and more.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://torinchacko.github.io">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%2300ff9d%22>&gt;_</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23b16cff%22>&gt;_</text></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,9 +24,14 @@
 
 <!-- Background layers -->
 <div class="bg-grid" aria-hidden="true"></div>
-<div class="bg-glow" aria-hidden="true"></div>
+<div class="bg-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
 <div class="bg-scanline" aria-hidden="true"></div>
+<div class="bg-noise" aria-hidden="true"></div>
 <canvas id="particles" aria-hidden="true"></canvas>
+
+<!-- Chrome -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -56,7 +61,7 @@
       <p class="hero-eyebrow reveal"><span class="dot"></span> available for opportunities</p>
 
       <h1 class="hero-title reveal">
-        <span class="line">Hi, I'm <span class="accent">Torin Chacko</span></span>
+        <span class="line">Hi, I'm <span class="accent" data-scramble>Torin Chacko</span></span>
       </h1>
 
       <div class="hero-typed reveal">
@@ -70,18 +75,18 @@
       </p>
 
       <div class="hero-actions reveal">
-        <a class="btn btn-primary" href="resume/resume.pdf" target="_blank" rel="noopener">
+        <a class="btn btn-primary" href="resume/resume.pdf" target="_blank" rel="noopener" data-magnetic>
           <span>View Résumé</span>
         </a>
-        <a class="btn btn-ghost" href="https://github.com/TorinChacko" target="_blank" rel="noopener">
+        <a class="btn btn-ghost" href="https://github.com/TorinChacko" target="_blank" rel="noopener" data-magnetic>
           <span>GitHub</span>
         </a>
-        <a class="btn btn-ghost" href="#projects">
+        <a class="btn btn-ghost" href="#projects" data-magnetic>
           <span>See Projects</span>
         </a>
       </div>
 
-      <div class="hero-terminal reveal" aria-hidden="true">
+      <div class="hero-terminal reveal" data-reveal="scale" aria-hidden="true">
         <div class="term-bar">
           <span class="term-dot red"></span><span class="term-dot yellow"></span><span class="term-dot green"></span>
           <span class="term-title">whoami.sh</span>
@@ -106,7 +111,7 @@
     <div class="section-inner">
       <h2 class="section-title reveal"><span class="tag">01</span> About</h2>
       <div class="about-grid">
-        <div class="about-text reveal">
+        <div class="about-text reveal" data-reveal="left">
           <p>
             I'm a backend developer and systems engineer focused on performance
             and low-level architecture — the kind of work where memory layout,
@@ -121,7 +126,7 @@
             "What do you call a programmer who vomits at IHOP? A stack overflow."
           </blockquote>
         </div>
-        <div class="about-facts reveal">
+        <div class="about-facts reveal" data-reveal="right">
           <ul class="fact-list">
             <li><span class="fact-k">Focus</span><span class="fact-v">Systems programming &amp; performance</span></li>
             <li><span class="fact-k">Comfortable with</span><span class="fact-v">Memory management, concurrency, ELF/ABI internals</span></li>
@@ -150,6 +155,19 @@
         <div class="skill-chip reveal"><span class="skill-name">GitHub Actions</span></div>
         <div class="skill-chip reveal"><span class="skill-name">Three.js</span></div>
         <div class="skill-chip reveal"><span class="skill-name">ShaderLab</span></div>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track" id="marqueeTrack">
+          <span>memory management</span>
+          <span>concurrency</span>
+          <span>ELF / ABI internals</span>
+          <span>instruction decoding</span>
+          <span>virtual memory</span>
+          <span>SIMD</span>
+          <span>data structures</span>
+          <span>performance profiling</span>
+        </div>
       </div>
     </div>
   </section>
@@ -185,29 +203,8 @@
         <article class="project-card reveal" data-tilt>
           <div class="project-card-glow" aria-hidden="true"></div>
           <div class="project-head">
-            <h3>Compartmental Metabolic Model</h3>
-            <span class="project-status">educational</span>
-          </div>
-          <p class="project-desc">
-            Hour-by-hour, multi-organ simulation of human metabolism across ten
-            interacting subsystems (liver, kidney, pancreas, muscle, adipose,
-            blood, brain, heart, and more). Responds to diet and exercise
-            input, with strict double-entry mass and energy conservation
-            audited at every step.
-          </p>
-          <div class="project-tags">
-            <span>Python</span><span>Simulation</span><span>Numerical Methods</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/TorinChacko/MetabolicModel" target="_blank" rel="noopener">Source →</a>
-          </div>
-        </article>
-
-        <article class="project-card reveal" data-tilt>
-          <div class="project-card-glow" aria-hidden="true"></div>
-          <div class="project-head">
             <h3>Garmin Field Log</h3>
-            <span class="project-status">live</span>
+            <span class="project-status live">live</span>
           </div>
           <p class="project-desc">
             A serverless fitness dashboard: GitHub Actions pulls Garmin Connect
@@ -244,24 +241,32 @@
           </div>
         </article>
 
+        <!-- ==========================================================
+             TEMPLATE — 2D Ninja Fighter
+             Fill in: real title, description, tags. When the repo and
+             host exist, swap the <span class="project-link-disabled">
+             lines for real <a href="..."> links, and change the status
+             chip class ("upcoming" → "live" / drop the class entirely).
+             Then delete this comment and uncomment the card below.
+             ==========================================================
         <article class="project-card reveal" data-tilt>
           <div class="project-card-glow" aria-hidden="true"></div>
           <div class="project-head">
-            <h3>Swarmfall</h3>
-            <span class="project-status private">private repo</span>
+            <h3>REAL TITLE HERE</h3>
+            <span class="project-status upcoming">coming soon</span>
           </div>
           <p class="project-desc">
-            An insect battle-royale built with Three.js — no engine install, no
-            binary assets. 100 bugs drop, one bug flies; pick a species and
-            fight down to the last one as a wall of insecticide fog closes in.
+            DESCRIPTION HERE.
           </p>
           <div class="project-tags">
-            <span>Three.js</span><span>WebGL</span><span>Procedural</span>
+            <span>TAG</span><span>TAG</span><span>TAG</span>
           </div>
           <div class="project-links">
+            <span class="project-link-disabled" title="Host to be announced">Play (soon)</span>
             <span class="project-link-disabled" title="Repository is private">Source (private)</span>
           </div>
         </article>
+        -->
 
       </div>
 
@@ -275,7 +280,7 @@
   <section class="section" id="resume">
     <div class="section-inner">
       <h2 class="section-title reveal"><span class="tag">04</span> Résumé</h2>
-      <div class="resume-panel reveal">
+      <div class="resume-panel reveal" data-reveal="scale">
         <div class="resume-info">
           <p>
             My résumé is written in LaTeX and rebuilt automatically by GitHub
@@ -283,8 +288,8 @@
             source.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="resume/resume.pdf" target="_blank" rel="noopener">Download PDF</a>
-            <a class="btn btn-ghost" href="resume/resume.tex" target="_blank" rel="noopener">View LaTeX Source</a>
+            <a class="btn btn-primary" href="resume/resume.pdf" target="_blank" rel="noopener" data-magnetic>Download PDF</a>
+            <a class="btn btn-ghost" href="resume/resume.tex" target="_blank" rel="noopener" data-magnetic>View LaTeX Source</a>
           </div>
         </div>
         <div class="resume-preview">
@@ -301,20 +306,20 @@
     <div class="section-inner contact-inner">
       <h2 class="section-title reveal"><span class="tag">05</span> Contact</h2>
       <p class="contact-lead reveal">Have a role, project, or just want to talk systems? Reach out.</p>
-      <div class="contact-links reveal">
-        <a class="contact-link" href="mailto:chackotorin@gmail.com">
+      <div class="contact-links">
+        <a class="contact-link reveal" href="mailto:chackotorin@gmail.com">
           <span class="contact-icon" aria-hidden="true">✉</span>
           <span>chackotorin@gmail.com</span>
         </a>
-        <a class="contact-link" href="https://linkedin.com/in/torin-chacko" target="_blank" rel="noopener">
+        <a class="contact-link reveal" href="https://linkedin.com/in/torin-chacko" target="_blank" rel="noopener">
           <span class="contact-icon" aria-hidden="true">in</span>
           <span>LinkedIn</span>
         </a>
-        <a class="contact-link" href="https://github.com/TorinChacko" target="_blank" rel="noopener">
+        <a class="contact-link reveal" href="https://github.com/TorinChacko" target="_blank" rel="noopener">
           <span class="contact-icon" aria-hidden="true">⌥</span>
           <span>GitHub</span>
         </a>
-        <a class="contact-link" href="https://leetcode.com/ty4jzbcja7" target="_blank" rel="noopener">
+        <a class="contact-link reveal" href="https://leetcode.com/ty4jzbcja7" target="_blank" rel="noopener">
           <span class="contact-icon" aria-hidden="true">λ</span>
           <span>LeetCode</span>
         </a>
@@ -327,6 +332,8 @@
 <footer class="footer">
   <p>Built with vanilla HTML/CSS/JS, hosted free on GitHub Pages. <span id="year"></span></p>
 </footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 
 <script src="assets/js/main.js"></script>
 </body>
