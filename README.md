@@ -18,8 +18,7 @@ Personal portfolio for backend, systems, and performance-engineering work, serve
 
 ```
 index.html              site markup
-assets/css/nocturne.css design-system tokens and component classes
-assets/css/site.css     terminal theme and page layout
+assets/css/site.css     design tokens, components, and page layout
 assets/js/main.js       footer year
 assets/images/          social and preview graphics
 resume/resume.tex       resume source
@@ -27,10 +26,9 @@ resume/resume.pdf       compiled resume (auto-built, do not edit by hand)
 scripts/check-site.mjs  local-reference and metadata validation
 ```
 
-`nocturne.css` is the source of truth for the system's look — retune tokens
-there rather than overriding rules downstream. `site.css` layers the
-terminal theme (JetBrains Mono, green accent, near-black ground) over those
-tokens and holds all page-specific layout; it never hardcodes a color.
+The `:root` block at the top of `site.css` is the source of truth for the
+look — JetBrains Mono, green accent, near-black ground. Retune tokens there
+rather than overriding rules further down; no rule hardcodes a color.
 
 ## Local preview
 
