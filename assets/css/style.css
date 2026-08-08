@@ -11,12 +11,13 @@
    7.  Hero
    8.  Sections + reveal system
    9.  About
-   10. Skills + marquee
-   11. Projects
-   12. Resume
-   13. Contact
-   14. Footer
-   15. Responsive
+   10. Experience
+   11. Skills + marquee
+   12. Projects
+   13. Resume
+   14. Contact
+   15. Footer
+   16. Responsive
    ========================================================= */
 
 /* =========================================================
@@ -813,20 +814,6 @@ h1, h2, h3 { font-family: var(--font-mono); margin: 0; letter-spacing: -0.025em;
 }
 .about-text p strong { color: var(--text); font-weight: 600; }
 
-.joke {
-  margin: 26px 0 0;
-  padding: 16px 20px;
-  border-left: 3px solid var(--accent);
-  background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.10), transparent);
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  color: var(--text-dim);
-  font-style: italic;
-  border-radius: 0 8px 8px 0;
-  transition: transform 0.35s var(--ease), border-color 0.3s ease;
-}
-.joke:hover { transform: translateX(5px); border-left-color: var(--accent-2); }
-
 .fact-list {
   list-style: none;
   margin: 0;
@@ -870,7 +857,89 @@ h1, h2, h3 { font-family: var(--font-mono); margin: 0; letter-spacing: -0.025em;
 .fact-v { color: var(--text); font-size: 0.95rem; }
 
 /* =========================================================
-   10. Skills + marquee
+   10. Experience
+   ========================================================= */
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 18px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 188px;
+  width: 1px;
+  background: linear-gradient(var(--accent), var(--border-hover), transparent);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 56px;
+  position: relative;
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg, rgba(23, 16, 41, 0.84), rgba(16, 11, 28, 0.76));
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  transition: transform 0.35s var(--ease), border-color 0.3s ease, box-shadow 0.35s ease;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 182px;
+  top: 34px;
+  width: 11px;
+  height: 11px;
+  border: 3px solid var(--bg);
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.18), 0 0 18px rgba(var(--accent-rgb), 0.65);
+}
+
+.timeline-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-lift);
+}
+
+.timeline-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 5px;
+  font-family: var(--font-mono);
+}
+
+.timeline-date { color: var(--accent-soft); font-size: 0.78rem; font-weight: 700; }
+.timeline-location { color: var(--text-faint); font-size: 0.72rem; }
+.timeline-kicker {
+  margin: 0 0 3px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.timeline-body h3 { font-size: 1.12rem; }
+.timeline-body > p:last-of-type { margin: 10px 0 15px; color: var(--text-dim); }
+.timeline-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.timeline-tags span {
+  padding: 3px 9px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}
+
+/* =========================================================
+   11. Skills + marquee
    ========================================================= */
 
 .skills-grid {
@@ -950,7 +1019,7 @@ h1, h2, h3 { font-family: var(--font-mono); margin: 0; letter-spacing: -0.025em;
 }
 
 /* =========================================================
-   11. Projects
+   12. Projects
    ========================================================= */
 
 .projects-grid {
@@ -969,6 +1038,47 @@ h1, h2, h3 { font-family: var(--font-mono); margin: 0; letter-spacing: -0.025em;
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
   transform-style: preserve-3d;
   will-change: transform;
+}
+
+.project-visual {
+  min-height: 92px;
+  margin: -4px 0 24px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background:
+    linear-gradient(rgba(var(--accent-rgb), 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--accent-rgb), 0.045) 1px, transparent 1px),
+    rgba(7, 5, 12, 0.55);
+  background-size: 18px 18px;
+  font-family: var(--font-mono);
+  overflow: hidden;
+}
+
+.project-visual span {
+  padding: 7px 9px;
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+  border-radius: 6px;
+  background: rgba(var(--accent-rgb), 0.09);
+  color: var(--accent-soft);
+  font-size: 0.67rem;
+  white-space: nowrap;
+}
+
+.project-visual i {
+  color: var(--accent-2);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-style: normal;
+}
+
+.project-visual-model span:nth-of-type(3) {
+  border-color: rgba(var(--accent-2-rgb), 0.35);
+  background: rgba(var(--accent-2-rgb), 0.08);
 }
 
 /* rotating conic gradient border on hover */
@@ -1148,7 +1258,7 @@ h1, h2, h3 { font-family: var(--font-mono); margin: 0; letter-spacing: -0.025em;
 .projects-more a:hover { color: var(--accent-2); border-bottom-color: currentColor; }
 
 /* =========================================================
-   12. Resume
+   13. Resume
    ========================================================= */
 
 .resume-panel {
@@ -1196,7 +1306,7 @@ h1, h2, h3 { font-family: var(--font-mono); margin: 0; letter-spacing: -0.025em;
   border-color: var(--border-hover);
   box-shadow: 0 24px 50px -26px rgba(var(--accent-rgb), 0.6);
 }
-.resume-preview object { display: block; }
+.resume-preview object { display: block; width: 100%; height: 100%; }
 .resume-fallback {
   padding: 24px;
   color: var(--text-dim);
@@ -1206,7 +1316,7 @@ h1, h2, h3 { font-family: var(--font-mono); margin: 0; letter-spacing: -0.025em;
 .resume-fallback a { color: var(--accent); text-decoration: underline; }
 
 /* =========================================================
-   13. Contact
+   14. Contact
    ========================================================= */
 
 .contact-inner { text-align: center; }
@@ -1216,7 +1326,8 @@ h1, h2, h3 { font-family: var(--font-mono); margin: 0; letter-spacing: -0.025em;
 .contact-lead {
   color: var(--text-dim);
   font-size: 1.06rem;
-  margin-bottom: 46px;
+  max-width: 720px;
+  margin: 0 auto 46px;
 }
 
 .contact-links {
@@ -1269,7 +1380,7 @@ h1, h2, h3 { font-family: var(--font-mono); margin: 0; letter-spacing: -0.025em;
 .contact-link:hover .contact-icon { transform: scale(1.2) rotate(-6deg); }
 
 /* =========================================================
-   14. Footer
+   15. Footer
    ========================================================= */
 
 .footer {
@@ -1284,11 +1395,15 @@ h1, h2, h3 { font-family: var(--font-mono); margin: 0; letter-spacing: -0.025em;
 .footer .heart { color: var(--accent); }
 
 /* =========================================================
-   15. Responsive
+   16. Responsive
    ========================================================= */
 
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .timeline::before { left: 28px; }
+  .timeline-item { grid-template-columns: 1fr; gap: 18px; padding-left: 58px; }
+  .timeline-item::before { left: 22px; }
+  .timeline-meta { padding-top: 0; }
   .resume-panel { grid-template-columns: 1fr; padding: 28px; }
   .resume-preview { height: 340px; }
 }
@@ -1324,6 +1439,7 @@ h1, h2, h3 { font-family: var(--font-mono); margin: 0; letter-spacing: -0.025em;
   .nav.menu-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
   .hero-terminal { display: none; }
+  .project-visual { justify-content: flex-start; overflow-x: auto; }
   .section { padding: 90px 20px; }
   .to-top { right: 16px; bottom: 16px; }
 }

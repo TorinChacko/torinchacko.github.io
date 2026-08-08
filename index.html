@@ -3,16 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Torin Chacko — Backend Developer, Systems Engineer, Low-Level Programmer</title>
+<title>Torin Chacko — Backend &amp; Systems Engineer</title>
 <meta name="description" content="Torin Chacko — backend developer, systems engineer, and low-level programmer. C/C++, Python, x86-64, and systems-level projects.">
 <meta name="theme-color" content="#07050c">
+<link rel="canonical" href="https://torinchacko.github.io/">
 
 <meta property="og:title" content="Torin Chacko — Backend Developer, Systems Engineer, Low-Level Programmer">
 <meta property="og:description" content="Backend development, systems engineering, performance, and low-level architecture. Featuring a from-scratch x86-64 emulator and serverless projects.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://torinchacko.github.io">
+<meta property="og:url" content="https://torinchacko.github.io/">
+<meta property="og:image" content="https://torinchacko.github.io/assets/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Torin Chacko — backend developer and systems engineer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Torin Chacko — Backend Developer &amp; Systems Engineer">
+<meta name="twitter:description" content="Low-level systems, performance-focused software, and mathematically demanding applications.">
+<meta name="twitter:image" content="https://torinchacko.github.io/assets/images/og-card.png">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23b16cff%22>&gt;_</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Torin Chacko",
+    "url": "https://torinchacko.github.io/",
+    "jobTitle": "Backend Developer and Systems Engineer",
+    "description": "Backend developer, systems engineer, and low-level programmer studying Mathematics of Computation at UCLA.",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of California, Los Angeles"
+    },
+    "sameAs": [
+      "https://github.com/TorinChacko",
+      "https://linkedin.com/in/torin-chacko",
+      "https://leetcode.com/ty4jzbcja7"
+    ]
+  }
+}
+</script>
+
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="assets/images/favicon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,13 +75,14 @@
     <nav aria-label="Primary">
       <ul class="nav-links">
         <li><a href="#about" data-nav="about">About</a></li>
+        <li><a href="#experience" data-nav="experience">Experience</a></li>
         <li><a href="#skills" data-nav="skills">Skills</a></li>
         <li><a href="#projects" data-nav="projects">Projects</a></li>
         <li><a href="#resume" data-nav="resume">Resume</a></li>
         <li><a href="#contact" data-nav="contact">Contact</a></li>
       </ul>
     </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -70,7 +105,8 @@
       </div>
 
       <p class="hero-sub reveal">
-        Backend developer and systems engineer. With a love of low-level architecture and performance optimization and a focus on advanced applications of mathematics and models.
+        Backend developer and systems engineer specializing in low-level architecture,
+        performance optimization, and mathematically demanding software.
       </p>
 
       <div class="hero-actions reveal">
@@ -112,20 +148,20 @@
       <div class="about-grid">
         <div class="about-text reveal" data-reveal="left">
           <p>
-            I'm a backend developer and systems engineer focused on performance
-            and low-level architecture. I enjoy building things from scratch, whether it's a from-scratch x86-64 emulator, a serverless fitness dashboard, or a game jam project. I have a strong foundation in C/C++, Python, and x86-64 assembly, and I'm comfortable with memory management, concurrency, and ELF/ABI internals. I thrive in environments where I can apply my skills to solve complex problems and optimize systems for efficiency and speed.
+            I build software where architecture and correctness matter: emulators,
+            data pipelines, automation systems, and mathematical models. My work
+            spans C++, Python, C#, SQL, and x86-64 assembly, with an emphasis on
+            understanding systems from the instruction level through deployment.
           </p>
           <p>
-            Outside of coursework and side projects, I'm an ultramarathon runner who runs 70+ mile weeks during training blocks alongside developing.
+            Outside of software, I'm an ultramarathon runner, often logging more
+            than 70 miles per week during training blocks.
           </p>
-          <blockquote class="joke">
-            "What do you call a programmer who vomits at IHOP? A stack overflow."
-          </blockquote>
         </div>
         <div class="about-facts reveal" data-reveal="right">
           <ul class="fact-list">
             <li><span class="fact-k">Focus</span><span class="fact-v">Systems programming &amp; performance</span></li>
-            <li><span class="fact-k">Comfortable with</span><span class="fact-v">Memory management, concurrency, ELF/ABI internals</span></li>
+            <li><span class="fact-k">Studying</span><span class="fact-v">Mathematics of Computation at UCLA</span></li>
             <li><span class="fact-k">Currently building</span><span class="fact-v">A from-scratch x86-64 emulator &amp; debugger</span></li>
           </ul>
         </div>
@@ -133,23 +169,68 @@
     </div>
   </section>
 
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-inner">
+      <h2 class="section-title reveal"><span class="tag">02</span> Experience &amp; Education</h2>
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-date">Jul 2026 — Present</span>
+            <span class="timeline-location">Hybrid</span>
+          </div>
+          <div class="timeline-body">
+            <p class="timeline-kicker">Numberzoo</p>
+            <h3>Software Engineer</h3>
+            <p>Building client-connected chat applications, AI-assisted workflow automation, and automated document-generation pipelines for small businesses.</p>
+            <div class="timeline-tags"><span>C#</span><span>.NET</span><span>Node.js</span><span>PostgreSQL</span></div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-date">Jun 2025 — Aug 2025</span>
+            <span class="timeline-location">San Rafael, CA</span>
+          </div>
+          <div class="timeline-body">
+            <p class="timeline-kicker">County of Marin</p>
+            <h3>IST Systems Engineer Intern</h3>
+            <p>Modernized C# and .NET systems with the LAND division, improved platform tooling, and expanded user access while working with SQL-backed data systems.</p>
+            <div class="timeline-tags"><span>C#</span><span>SQL</span><span>.NET Framework</span></div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-date">Expected 2028</span>
+            <span class="timeline-location">Los Angeles, CA</span>
+          </div>
+          <div class="timeline-body">
+            <p class="timeline-kicker">University of California, Los Angeles</p>
+            <h3>B.S. Mathematics of Computation</h3>
+            <p>Coursework includes computer architecture, operating systems, data structures and algorithms, linear algebra, real analysis, complex analysis, and statistical models.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- SKILLS -->
   <section class="section" id="skills">
     <div class="section-inner">
-      <h2 class="section-title reveal"><span class="tag">02</span> Skills &amp; Tools</h2>
+      <h2 class="section-title reveal"><span class="tag">03</span> Skills &amp; Tools</h2>
       <div class="skills-grid" id="skillsGrid">
         <div class="skill-chip reveal"><span class="skill-name">C</span></div>
         <div class="skill-chip reveal"><span class="skill-name">C++</span></div>
         <div class="skill-chip reveal"><span class="skill-name">Python</span></div>
+        <div class="skill-chip reveal"><span class="skill-name">C# / .NET</span></div>
         <div class="skill-chip reveal"><span class="skill-name">x86-64 Assembly</span></div>
-        <div class="skill-chip reveal"><span class="skill-name">MySQL</span></div>
+        <div class="skill-chip reveal"><span class="skill-name">SQL / PostgreSQL</span></div>
         <div class="skill-chip reveal"><span class="skill-name">Git</span></div>
         <div class="skill-chip reveal"><span class="skill-name">Linux</span></div>
-        <div class="skill-chip reveal"><span class="skill-name">Pandas</span></div>
+        <div class="skill-chip reveal"><span class="skill-name">Node.js</span></div>
         <div class="skill-chip reveal"><span class="skill-name">CMake</span></div>
         <div class="skill-chip reveal"><span class="skill-name">GitHub Actions</span></div>
-        <div class="skill-chip reveal"><span class="skill-name">Three.js</span></div>
-        <div class="skill-chip reveal"><span class="skill-name">ShaderLab</span></div>
       </div>
 
       <div class="marquee" aria-hidden="true">
@@ -170,22 +251,23 @@
   <!-- PROJECTS -->
   <section class="section" id="projects">
     <div class="section-inner">
-      <h2 class="section-title reveal"><span class="tag">03</span> Projects</h2>
+      <h2 class="section-title reveal"><span class="tag">04</span> Selected Projects</h2>
 
       <div class="projects-grid">
 
         <article class="project-card reveal" data-tilt>
           <div class="project-card-glow" aria-hidden="true"></div>
+          <div class="project-visual project-visual-cpu" aria-hidden="true">
+            <span>fetch</span><i>→</i><span>decode</span><i>→</i><span>execute</span><i>→</i><span>flags</span>
+          </div>
           <div class="project-head">
             <h3>x86-64 Emulator</h3>
             <span class="project-status">in progress</span>
           </div>
           <p class="project-desc">
-            A from-scratch x86-64 emulator and debugger in modern C++.
-            Instruction semantics, machine-code decoding, ELF loading, virtual
-            memory, syscalls, SIMD — building toward a JIT backend. Currently on
-            Milestone 1: CPU state and integer flags, with full flag-correctness
-            unit tests.
+            A from-scratch x86-64 emulator and debugger in modern C++. The current
+            core models CPU state and integer-flag behavior, with CF/PF/AF/ZF/SF/OF
+            correctness verified against native hardware using a dependency-free test suite.
           </p>
           <div class="project-tags">
             <span>C++20</span><span>CMake</span><span>Systems</span><span>x86-64</span>
@@ -197,15 +279,18 @@
 
         <article class="project-card reveal" data-tilt>
           <div class="project-card-glow" aria-hidden="true"></div>
+          <div class="project-visual project-visual-pipeline" aria-hidden="true">
+            <span>Garmin</span><i>→</i><span>Actions</span><i>→</i><span>JSON</span><i>→</i><span>Pages</span>
+          </div>
           <div class="project-head">
             <h3>Garmin Field Log</h3>
             <span class="project-status live">live</span>
           </div>
           <p class="project-desc">
-            A serverless fitness dashboard: GitHub Actions pulls Garmin Connect
-            stats on a daily schedule and commits the data, GitHub Pages serves
-            the static frontend that reads it. No server, no always-on machine
-            — just scheduled CI and a static page.
+            A serverless fitness dashboard that pulls Garmin Connect data each day,
+            commits normalized history, and renders it through GitHub Pages. A
+            sequential backfill workflow imports historical activity without an
+            always-on server.
           </p>
           <div class="project-tags">
             <span>Python</span><span>GitHub Actions</span><span>Static Hosting</span>
@@ -216,33 +301,24 @@
           </div>
         </article>
 
-
-        <!-- ==========================================================
-             TEMPLATE — 2D Ninja Fighter
-             Fill in: real title, description, tags. When the repo and
-             host exist, swap the <span class="project-link-disabled">
-             lines for real <a href="..."> links, and change the status
-             chip class ("upcoming" → "live" / drop the class entirely).
-             Then delete this comment and uncomment the card below.
-             ==========================================================
         <article class="project-card reveal" data-tilt>
           <div class="project-card-glow" aria-hidden="true"></div>
+          <div class="project-visual project-visual-model" aria-hidden="true">
+            <span>diet</span><i>+</i><span>exercise</span><i>→</i><span>10 subsystems</span><i>→</i><span>balance</span>
+          </div>
           <div class="project-head">
-            <h3>REAL TITLE HERE</h3>
-            <span class="project-status upcoming">coming soon</span>
+            <h3>Human Metabolic Model</h3>
+            <span class="project-status">simulation</span>
           </div>
           <p class="project-desc">
-            DESCRIPTION HERE.
+            An hour-by-hour Python simulation of ten interacting human metabolic
+            subsystems responding to diet and exercise. Double-entry accounting
+            enforces mass and energy conservation across every compartment and sink.
           </p>
           <div class="project-tags">
-            <span>TAG</span><span>TAG</span><span>TAG</span>
-          </div>
-          <div class="project-links">
-            <span class="project-link-disabled" title="Host to be announced">Play (soon)</span>
-            <span class="project-link-disabled" title="Repository is private">Source (private)</span>
+            <span>Python</span><span>Mathematical Modeling</span><span>Simulation</span>
           </div>
         </article>
-        -->
 
       </div>
 
@@ -255,7 +331,7 @@
   <!-- RESUME -->
   <section class="section" id="resume">
     <div class="section-inner">
-      <h2 class="section-title reveal"><span class="tag">04</span> Résumé</h2>
+      <h2 class="section-title reveal"><span class="tag">05</span> Résumé</h2>
       <div class="resume-panel reveal" data-reveal="scale">
         <div class="resume-info">
           <p>
@@ -269,7 +345,7 @@
           </div>
         </div>
         <div class="resume-preview">
-          <object data="resume/resume.pdf" type="application/pdf" width="100%" height="100%" aria-label="Résumé preview">
+          <object data="resume/resume.pdf" type="application/pdf" title="Résumé preview">
             <p class="resume-fallback">PDF preview unavailable — <a href="resume/resume.pdf">download the résumé</a> instead.</p>
           </object>
         </div>
@@ -280,8 +356,8 @@
   <!-- CONTACT -->
   <section class="section" id="contact">
     <div class="section-inner contact-inner">
-      <h2 class="section-title reveal"><span class="tag">05</span> Contact</h2>
-      <p class="contact-lead reveal">Have a role, project, or just want to talk systems? Reach out.</p>
+      <h2 class="section-title reveal"><span class="tag">06</span> Contact</h2>
+      <p class="contact-lead reveal">I'm open to backend, systems, and performance-engineering opportunities. If you're building technically demanding software, I'd like to hear about it.</p>
       <div class="contact-links">
         <a class="contact-link reveal" href="mailto:chackotorin@gmail.com">
           <span class="contact-icon" aria-hidden="true">✉</span>
@@ -309,7 +385,7 @@
   <p>Built with vanilla HTML/CSS/JS, hosted free on GitHub Pages. <span id="year"></span></p>
 </footer>
 
-<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+<button type="button" class="to-top" id="toTop" aria-label="Back to top">↑</button>
 
 <script src="assets/js/main.js"></script>
 </body>
