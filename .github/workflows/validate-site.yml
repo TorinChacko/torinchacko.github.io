@@ -1,0 +1,29 @@
+name: Validate Site
+
+on:
+  push:
+    paths:
+      - 'index.html'
+      - 'assets/**'
+      - 'scripts/check-site.mjs'
+      - '.github/workflows/validate-site.yml'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check JavaScript syntax
+        run: node --check assets/js/main.js
+      - name: Validate HTML
+        run: npx --yes html-validate@11.6.2 index.html
+      - name: Validate page structure and local references
+        run: node scripts/check-site.mjs

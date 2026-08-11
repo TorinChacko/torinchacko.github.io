@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Torin Chacko — Backend &amp; Systems Engineer</title>
+<meta name="description" content="Torin Chacko — backend developer and systems engineer working close to the metal in C, C++, Python and x86-64 assembly. Building an x86-64 emulator and debugger from scratch.">
+<meta name="theme-color" content="#0c0d0f">
+<link rel="canonical" href="https://torinchacko.github.io/">
+
+<meta property="og:title" content="Torin Chacko — Backend Developer &amp; Systems Engineer">
+<meta property="og:description" content="Memory management, concurrency, and the performance tradeoffs that come with them. Featuring a from-scratch x86-64 emulator and debugger in modern C++.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://torinchacko.github.io/">
+<meta property="og:image" content="https://torinchacko.github.io/assets/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Torin Chacko — backend developer and systems engineer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Torin Chacko — Backend Developer &amp; Systems Engineer">
+<meta name="twitter:description" content="Low-level systems, performance-focused software, and mathematically demanding applications.">
+<meta name="twitter:image" content="https://torinchacko.github.io/assets/images/og-card.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Torin Chacko",
+    "url": "https://torinchacko.github.io/",
+    "jobTitle": "Backend Developer and Systems Engineer",
+    "description": "Backend developer, systems engineer, and low-level programmer studying Mathematics of Computation at UCLA.",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of California, Los Angeles"
+    },
+    "sameAs": [
+      "https://github.com/TorinChacko",
+      "https://linkedin.com/in/torin-chacko",
+      "https://leetcode.com/ty4jzbcja7"
+    ]
+  }
+}
+</script>
+
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="page">
+  <div class="term-window">
+
+  <div class="term-bar" aria-hidden="true">
+    <span class="term-dot"></span>
+    <span class="term-dot"></span>
+    <span class="term-dot"></span>
+    <span class="term-name">torin@systems — zsh — 160×48</span>
+  </div>
+
+  <div class="term-screen">
+
+  <nav class="nav" aria-label="Primary">
+    <a href="#top" class="nav-brand">torin@chacko<span class="brand-path">:~$</span><span class="brand-cursor">&nbsp;</span></a>
+    <div class="navlinks">
+      <a href="#about">~/about</a>
+      <a href="#experience">~/experience</a>
+      <a href="#skills">~/skills</a>
+      <a href="#projects">~/projects</a>
+      <a href="#resume">~/resume</a>
+      <a href="#contact">~/contact</a>
+    </div>
+    <a class="btn btn-primary" href="resume/resume.pdf" target="_blank" rel="noopener">Résumé</a>
+  </nav>
+
+  <main id="main">
+  <div class="wrap">
+
+    <!-- HERO -->
+    <section id="top" class="hero" aria-label="Introduction">
+      <div>
+        <span class="hero-eyebrow">
+          <span class="dot"></span>
+          $ ./status --available
+        </span>
+        <h1 class="hero-title">Backend developer &amp; systems engineer.</h1>
+        <p class="hero-lede">
+          I build close to the metal — memory management, concurrency, and the performance
+          tradeoffs that come with them. Currently writing an x86-64 emulator and debugger
+          from scratch in C++.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="resume/resume.pdf" target="_blank" rel="noopener">View résumé</a>
+          <a class="btn btn-ghost" href="https://github.com/TorinChacko" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-ghost" href="#emulator">See it in action</a>
+        </div>
+      </div>
+      <div class="card elev-md code-card">
+        <div class="code-card-bar">
+          <span>emulator/cpu/flags.cpp</span>
+        </div>
+        <pre><code><span class="c-comment">// ADD r/m64, r64
+// set ZF/SF/OF/CF per Intel SDM Vol.1 §3.4.3</span>
+<span class="c-lit">uint64_t</span> result = dst + src;
+flags.zf = (result == <span class="c-lit">0</span>);
+flags.sf = (result &gt;&gt; <span class="c-lit">63</span>) &amp; <span class="c-lit">1</span>;
+flags.cf = result &lt; dst;
+flags.of = ((dst ^ result) &amp; (src ^ result))
+           &gt;&gt; <span class="c-lit">63</span>;
+regs.write(dst_reg, result);</code></pre>
+      </div>
+    </section>
+
+    <hr class="hr">
+
+    <!-- ABOUT -->
+    <section id="about" class="section" aria-label="About">
+      <p class="eyebrow eyebrow-tight">01 — About</p>
+      <div class="about-grid">
+        <div>
+          <p class="prose">
+            I'm a backend developer and systems engineer focused on performance and low-level
+            architecture — the kind of work where memory layout, concurrency, and
+            instruction-level behavior actually matter.
+          </p>
+          <p class="prose">
+            Outside of coursework and side projects, I'm a regular LeetCode practitioner working
+            on consistency, and I build things I'd want to read the source of myself.
+          </p>
+        </div>
+        <div class="card card-flush">
+          <ul class="facts">
+            <li>
+              <span class="label">Focus</span>
+              <span class="fact-v">Systems programming &amp; performance</span>
+            </li>
+            <li>
+              <span class="label">Comfortable with</span>
+              <span class="fact-v">Memory management, concurrency, ELF/ABI internals</span>
+            </li>
+            <li>
+              <span class="label">Currently building</span>
+              <span class="fact-v">A from-scratch x86-64 emulator &amp; debugger</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hr">
+
+    <!-- EXPERIENCE & EDUCATION -->
+    <section id="experience" class="section" aria-label="Experience and education">
+      <p class="eyebrow">02 — Experience &amp; education</p>
+      <div class="timeline">
+
+        <article class="card elev-sm timeline-item">
+          <div class="timeline-when">
+            <span class="label">Jul 2026 — Present</span>
+            <span class="label">Hybrid</span>
+          </div>
+          <div class="timeline-body">
+            <div class="card-kicker">Numberzoo</div>
+            <div class="card-title">Software Engineer</div>
+            <p class="card-body">
+              Building client-connected chat applications, AI-assisted workflow automation, and
+              automated document-generation pipelines for small businesses.
+            </p>
+            <div class="project-tags">
+              <span class="tag tag-neutral">C#</span>
+              <span class="tag tag-neutral">.NET</span>
+              <span class="tag tag-neutral">Node.js</span>
+              <span class="tag tag-neutral">PostgreSQL</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card elev-sm timeline-item">
+          <div class="timeline-when">
+            <span class="label">Jun 2025 — Aug 2025</span>
+            <span class="label">San Rafael, CA</span>
+          </div>
+          <div class="timeline-body">
+            <div class="card-kicker">County of Marin</div>
+            <div class="card-title">IST Systems Engineer Intern</div>
+            <p class="card-body">
+              Modernized C# and .NET systems with the LAND division, improved platform tooling,
+              and expanded user access while working with SQL-backed data systems.
+            </p>
+            <div class="project-tags">
+              <span class="tag tag-neutral">C#</span>
+              <span class="tag tag-neutral">SQL</span>
+              <span class="tag tag-neutral">.NET Framework</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card elev-sm timeline-item">
+          <div class="timeline-when">
+            <span class="label">Expected 2028</span>
+            <span class="label">Los Angeles, CA</span>
+          </div>
+          <div class="timeline-body">
+            <div class="card-kicker">University of California, Los Angeles</div>
+            <div class="card-title">B.S. Mathematics of Computation</div>
+            <p class="card-body">
+              Coursework includes computer architecture, operating systems, data structures and
+              algorithms, linear algebra, real analysis, complex analysis, and statistical models.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <hr class="hr">
+
+    <!-- SKILLS -->
+    <section id="skills" class="section" aria-label="Skills and tools">
+      <p class="eyebrow">03 — Skills &amp; tools</p>
+      <div class="skill-grid">
+        <div>
+          <span class="label">Languages</span>
+          <div class="tag-row">
+            <span class="tag tag-outline">C</span>
+            <span class="tag tag-outline">C++</span>
+            <span class="tag tag-outline">Python</span>
+            <span class="tag tag-outline">x86-64 Assembly</span>
+          </div>
+        </div>
+        <div>
+          <span class="label">Systems</span>
+          <div class="tag-row">
+            <span class="tag tag-outline">Linux</span>
+            <span class="tag tag-outline">ELF / ABI</span>
+            <span class="tag tag-outline">Concurrency</span>
+            <span class="tag tag-outline">MySQL</span>
+          </div>
+        </div>
+        <div>
+          <span class="label">Tooling</span>
+          <div class="tag-row">
+            <span class="tag tag-outline">CMake</span>
+            <span class="tag tag-outline">Git</span>
+            <span class="tag tag-outline">GitHub Actions</span>
+            <span class="tag tag-outline">Pandas</span>
+          </div>
+        </div>
+        <div>
+          <span class="label">Graphics</span>
+          <div class="tag-row">
+            <span class="tag tag-outline">Three.js</span>
+            <span class="tag tag-outline">ShaderLab</span>
+            <span class="tag tag-outline">Unity</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hr">
+
+    <!-- FEATURED PROJECT -->
+    <section id="emulator" class="section" aria-label="Featured project">
+      <p class="eyebrow eyebrow-tight">Featured — Systems</p>
+      <div class="feature-head">
+        <h2>x86-64 Emulator &amp; Debugger</h2>
+        <a class="btn btn-ghost" href="https://github.com/TorinChacko/x86-64-emulator" target="_blank" rel="noopener">View source →</a>
+      </div>
+      <p class="feature-lede">
+        A from-scratch x86-64 emulator in modern C++ — no dependency on an existing
+        CPU-emulation library. Decodes real machine code, loads real ELF binaries, and enforces
+        flag correctness the way silicon does.
+      </p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">01</div>
+          <div class="step-t">Decode</div>
+          <p>Raw byte streams into instruction semantics — prefixes, ModRM/SIB, and operand encoding handled explicitly, no third-party disassembler.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">02</div>
+          <div class="step-t">Execute</div>
+          <p>CPU state, integer flags, virtual memory and syscalls, with an ELF loader that maps real binaries into emulated address space.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">03</div>
+          <div class="step-t">Verify</div>
+          <p>Unit tests assert flag correctness per the Intel SDM for every implemented instruction, ahead of a planned JIT backend.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hr">
+
+    <!-- OTHER PROJECTS -->
+    <section id="projects" class="section" aria-label="Other projects">
+      <p class="eyebrow">04 — Other projects</p>
+      <div class="project-grid">
+
+        <article class="card elev-sm project-card">
+          <div class="card-kicker">
+            <span>Simulation</span>
+            <span class="tag tag-outline">educational</span>
+          </div>
+          <div class="card-title">Compartmental Metabolic Model</div>
+          <p class="card-body">
+            Hour-by-hour, multi-organ simulation of human metabolism across ten interacting
+            subsystems, responding to diet and exercise with strict mass and energy conservation.
+          </p>
+          <div class="project-tags">
+            <span class="tag tag-neutral">Python</span>
+            <span class="tag tag-neutral">Simulation</span>
+            <span class="tag tag-neutral">Numerical Methods</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/TorinChacko/MetabolicModel" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </article>
+
+        <article class="card elev-sm project-card">
+          <div class="card-kicker">
+            <span>Web</span>
+            <span class="tag tag-outline">live</span>
+          </div>
+          <div class="card-title">Garmin Field Log</div>
+          <p class="card-body">
+            A serverless fitness dashboard: scheduled GitHub Actions pull Garmin Connect stats and
+            commit the data, and GitHub Pages serves the static frontend that reads it.
+          </p>
+          <div class="project-tags">
+            <span class="tag tag-neutral">Python</span>
+            <span class="tag tag-neutral">GitHub Actions</span>
+            <span class="tag tag-neutral">Static Hosting</span>
+          </div>
+          <div class="project-links">
+            <a href="https://torinchacko.github.io/garmin-dashboard/" target="_blank" rel="noopener">Live demo →</a>
+            <a href="https://github.com/TorinChacko/garmin-dashboard" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </article>
+
+        <article class="card elev-sm project-card">
+          <div class="card-kicker">
+            <span>Game jam</span>
+            <span class="tag tag-outline">Winter 2025</span>
+          </div>
+          <div class="card-title">The Door</div>
+          <p class="card-body">
+            Built for ACM Studio @ UCLA's Reverse Game Jam. You've lost your keys — use a set of
+            increasingly unusual tools to get back into your own house before time runs out.
+          </p>
+          <div class="project-tags">
+            <span class="tag tag-neutral">Unity</span>
+            <span class="tag tag-neutral">ShaderLab</span>
+          </div>
+          <div class="project-links">
+            <a href="https://torinchacko1.itch.io/ducksanddoors" target="_blank" rel="noopener">Play →</a>
+            <a href="https://github.com/TorinChacko/TheDoor" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </article>
+
+        <article class="card elev-sm project-card">
+          <div class="card-kicker">
+            <span>WebGL</span>
+            <span class="tag tag-outline">private repo</span>
+          </div>
+          <div class="card-title">Swarmfall</div>
+          <p class="card-body">
+            An insect battle-royale built with Three.js, no engine install and no binary assets —
+            a hundred bugs drop, one flies, and the field closes in as a wall of fog.
+          </p>
+          <div class="project-tags">
+            <span class="tag tag-neutral">Three.js</span>
+            <span class="tag tag-neutral">WebGL</span>
+            <span class="tag tag-neutral">Procedural</span>
+          </div>
+          <div class="project-note">Source unavailable — private repository</div>
+        </article>
+
+      </div>
+      <p class="more">More on <a href="https://github.com/TorinChacko?tab=repositories" target="_blank" rel="noopener">GitHub →</a></p>
+    </section>
+
+    <hr class="hr">
+
+    <!-- RÉSUMÉ -->
+    <section id="resume" class="section" aria-label="Résumé">
+      <p class="eyebrow">05 — Résumé</p>
+      <div class="split">
+        <div>
+          <p class="resume-lede">
+            Written in LaTeX and rebuilt automatically by GitHub Actions on every update, so
+            what's linked here always matches the source.
+          </p>
+          <div class="resume-actions">
+            <a class="btn btn-primary" href="resume/resume.pdf" target="_blank" rel="noopener">Download PDF</a>
+            <a class="btn btn-secondary" href="resume/resume.tex" target="_blank" rel="noopener">View LaTeX source</a>
+          </div>
+        </div>
+        <a href="resume/resume.pdf" target="_blank" rel="noopener" class="card elev-md resume-drop">
+          <svg width="36" height="36" viewBox="0 0 256 256" fill="var(--color-accent-300)" aria-hidden="true" focusable="false"><path d="M200,32H88A16,16,0,0,0,72,48V80H56A16,16,0,0,0,40,96v88a16,16,0,0,0,16,16h16v24a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96l-24-24Zm0,16v40h40Zm-72,32V48H184V96h32v88H88Zm-32,0H72v88H56Zm152,120H88V200h96a16,16,0,0,0,16-16V96h24Z"/></svg>
+          <span class="resume-drop-name">resume.pdf</span>
+          <span class="resume-drop-hint">Click to open</span>
+        </a>
+      </div>
+    </section>
+
+    <hr class="hr">
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-last" aria-label="Contact">
+      <p class="eyebrow eyebrow-mid">06 — Contact</p>
+      <h2 class="contact-title">Have a role, project, or want to talk systems? Reach out.</h2>
+      <div class="btn-row">
+        <a class="btn btn-secondary" href="mailto:chackotorin@gmail.com">chackotorin@gmail.com</a>
+        <a class="btn btn-secondary" href="https://linkedin.com/in/torin-chacko" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-secondary" href="https://github.com/TorinChacko" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-secondary" href="https://leetcode.com/ty4jzbcja7" target="_blank" rel="noopener">LeetCode</a>
+      </div>
+    </section>
+
+  </div>
+  </main>
+
+  <footer class="footer">
+    Built with HTML, CSS &amp; JS, hosted on GitHub Pages. © <span id="year">2026</span>
+  </footer>
+
+  </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

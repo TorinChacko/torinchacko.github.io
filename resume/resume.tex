@@ -1,0 +1,201 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=0.5in,top=0.45in,bottom=0.45in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{graphicx}
+
+\definecolor{accent}{HTML}{0B6E4F}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.03}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=accent,
+    linkcolor=accent,
+}
+
+% ---------------------------------------------------------
+% Section formatting
+% ---------------------------------------------------------
+\titleformat{\section}
+    {\large\bfseries\color{accent}}
+    {}{0em}{}
+    [\titlerule]
+
+\titlespacing*{\section}
+    {0pt}{8pt}{4pt}
+
+% ---------------------------------------------------------
+% List formatting
+% ---------------------------------------------------------
+\setlist[itemize]{
+    leftmargin=16pt,
+    topsep=2pt,
+    itemsep=2pt,
+    parsep=0pt,
+    partopsep=0pt
+}
+
+% #1 = position/title
+% #2 = date range
+% #3 = organization
+% #4 = location
+\newcommand{\entry}[4]{%
+    \textbf{#1} \hfill #2 \\
+    \textit{#3} \hfill \textit{#4} \\
+    \vspace{2pt}
+}
+
+% Same as \entry but reserves a small logo column on the left.
+\newcommand{\entrylogo}[5]{%
+    \begin{tabularx}{\linewidth}{@{}p{0.4in} X@{}}
+        \raisebox{-0.05in}{\includegraphics[
+            width=0.35in,
+            height=0.35in,
+            keepaspectratio
+        ]{#1}}
+        &
+        \textbf{#2} \hfill #3 \\
+        &
+        \textit{#4} \hfill \textit{#5} \\
+    \end{tabularx}
+    \vspace{2pt}
+}
+
+\begin{document}
+\small
+
+% ---------------------------------------------------------
+% Header
+% ---------------------------------------------------------
+\begin{center}
+    {\LARGE \bfseries Torin Chacko} \\[5pt]
+    Computational Mathematics \& Systems Engineering \\[4pt]
+
+    \href{mailto:chackotorin@gmail.com}{chackotorin@gmail.com}
+    \quad $|$ \quad
+    \href{https://linkedin.com/in/torin-chacko}{linkedin.com/in/torin-chacko}
+    \quad $|$ \quad
+    \href{https://github.com/TorinChacko}{github.com/TorinChacko}
+    \quad $|$ \quad
+    \href{https://torinchacko.github.io}{torinchacko.github.io}
+\end{center}
+
+\vspace{3pt}
+
+% ---------------------------------------------------------
+% Education
+% ---------------------------------------------------------
+\section*{Education}
+
+\entry
+{University of California, Los Angeles}
+{Expected 2028}
+{B.S., Mathematics of Computation}
+{Los Angeles, CA}
+
+\begin{itemize}
+    \item Relevant coursework: CS33 Computer Architecture, Operating Systems, CS32 Data Structures \& Algorithms, Linear Algebra, Real Analysis, Complex Analysis, Statistical Models
+    \item Activities: ASME, ACM, Bruinrunners, IEEE, IDEAhacks
+\end{itemize}
+
+\vspace{3pt}
+
+% ---------------------------------------------------------
+% Experience
+% ---------------------------------------------------------
+\section*{Experience}
+
+\entry
+{Software Engineer}
+{Jul 2026 -- Present}
+{Numberzoo}
+{Hybrid}
+
+\begin{itemize}
+    \item Connected client data with custom-built chat applications for small-business clients
+    \item Built AI-powered workflow automation and automated document creation pipelines
+    \item \textit{Technologies: SQL, PostgreSQL, C\#, .NET, Node.js, AI automation}
+\end{itemize}
+
+\vspace{4pt}
+
+\entry
+{IST Systems Engineer Intern}
+{Jun 2025 -- Aug 2025}
+{County of Marin}
+{San Rafael, CA}
+
+\begin{itemize}
+    \item Updated out-of-date County systems in C\#
+    \item Worked with the LAND division to modernize their platform and tooling, expanding user access
+    \item Learned and applied SQL, data systems, query design, and the .NET Framework
+    \item \textit{Technologies: C\#, SQL, .NET Framework, HTML, CSS}
+\end{itemize}
+
+\vspace{3pt}
+
+% ---------------------------------------------------------
+% Projects
+% ---------------------------------------------------------
+\section*{Projects}
+
+\entry
+{x86-64 Emulator}
+{}
+{C++20, CMake}
+{}
+
+\begin{itemize}
+    \item Building a from-scratch x86-64 emulator and debugger covering instruction semantics, machine-code decoding, ELF loading, virtual memory, and syscalls
+    \item Implemented CPU state and flag-correctness (CF/PF/AF/ZF/SF/OF) verified against native hardware with a dependency-free unit-test suite
+\end{itemize}
+
+\vspace{4pt}
+
+\entry
+{Compartmental Human Metabolic Model}
+{}
+{Python}
+{}
+
+\begin{itemize}
+    \item Built an hour-by-hour, ten-subsystem simulation of human metabolism responding to diet and exercise inputs
+    \item Enforced strict double-entry mass and energy conservation across every organ compartment and environmental sink
+\end{itemize}
+
+\vspace{4pt}
+
+\entry
+{Garmin Field Log}
+{}
+{Python, GitHub Actions, HTML}
+{}
+
+\begin{itemize}
+    \item Connected the Garmin API to a serverless fitness dashboard: a scheduled GitHub Actions job pulls Garmin Connect data daily and a static GitHub Pages frontend renders it
+    \item Created a backfill feature to sequentially pull all historical Garmin data and update the site
+\end{itemize}
+
+% ---------------------------------------------------------
+% Skills
+% ---------------------------------------------------------
+\section*{Skills}
+
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+    \textbf{Languages} &
+    C, C++, C\#, Python, x86-64 Assembly, MIPS, SQL \\[4pt]
+
+    \textbf{Tools \& Frameworks} &
+    .NET Framework, Node.js, Git, CMake, Linux, MySQL, PostgreSQL, GitHub Actions, SolidWorks, ROS \\[4pt]
+
+    \textbf{Domains} &
+    Low-Level Systems, Cybersecurity, Algorithms
+\end{tabularx}
+
+\end{document}
